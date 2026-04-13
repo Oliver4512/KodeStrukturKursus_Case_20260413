@@ -1,3 +1,3 @@
 #! /bin/sh
 
-cd out/build ; ./quality_api
+./build/quality_api
