@@ -28,7 +28,7 @@ int QualityService::calculateDiscount(const DiscountRequest& request) const {
     int discount = 0;
     if (request.amount > 100) discount = 10;
     if (request.amount >= 500) discount = 20;
-    if (request.amount >= 1000) discount = 30;
+    if (request.amount > 1000) discount = 30;
     if (request.loyalCustomer) discount += 5;
     if (request.couponCode == "SAVE10") discount += 10;
     if (request.productionMode && request.hourOfDay >= 22) discount += 5;
