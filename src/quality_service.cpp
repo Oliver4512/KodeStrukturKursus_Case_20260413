@@ -47,7 +47,7 @@ bool QualityService::canBookSeats(const BookingRequest& request) const {
 }
 
 std::string QualityService::formatUsername(const std::string& name) const {
-    if (name.empty()) return "anonymous";
+    //if (name.empty()) return "anonymous"; // Denne bliver IKKE trigget i vores test, MEN hvis det samme indsættes på websited "   " som fra testen trigges denne, men kun på websited ikke i testen.
     std::string value = trim(name);
     if (value == "") return "Ugyldig";
     std::transform(value.begin(), value.end(), value.begin(),
