@@ -49,6 +49,7 @@ bool QualityService::canBookSeats(const BookingRequest& request) const {
 std::string QualityService::formatUsername(const std::string& name) const {
     if (name.empty()) return "anonymous";
     std::string value = trim(name);
+    if (value == "") return "Ugyldig";
     std::transform(value.begin(), value.end(), value.begin(),
         [](unsigned char c){ return std::tolower(c); });
 
