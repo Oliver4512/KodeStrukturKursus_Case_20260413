@@ -35,6 +35,7 @@ TEST_F(QualityServiceTest, UsernameRules) {
 
 TEST_F(QualityServiceTest, SensorAverageUsesPreciseDivision) {
     EXPECT_DOUBLE_EQ(service.calculateSensorAverage({1, 2}), 1.5);
+    EXPECT_DOUBLE_EQ(service.calculateSensorAverage({4, 8}), 6);
     EXPECT_DOUBLE_EQ(service.calculateSensorAverage({10, 11, 12}), 11.0);
 }
 

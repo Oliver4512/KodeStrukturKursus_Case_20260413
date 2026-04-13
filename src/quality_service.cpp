@@ -58,7 +58,11 @@ std::string QualityService::formatUsername(const std::string& name) const {
 
 double QualityService::calculateSensorAverage(const std::vector<int>& values) const {
     if (values.empty()) return 0.0;
-    int sum = std::accumulate(values.begin(), values.end(), 0);
+    double sum = std::accumulate(values.begin(), values.end(), 0);
+    std::cout << sum << "---------------------------------------------- sum" << std::endl;
+    std::cout << values.size() << "---------------------------------------------- values.size()" << std::endl;
+    std::cout << sum / values.size() << "---------------------------------------------- sum / values.size()" << std::endl;
+    // ---------------------  med google test ctest -> cout printer når der er fejl, men når det virker printer den ikke -------------------   // med ctest -V printer den cout - Det er en feature
     return static_cast<double>(sum / values.size());
 }
 
