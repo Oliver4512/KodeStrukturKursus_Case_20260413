@@ -21,3 +21,7 @@ tasklist /fi "pid eq 1234"
 Kill process with PID in powershell as administrator:
 Stop-Process -Id 1234 -Force
 Stop-Process -Id 4836 -Force
+
+
+Tilføjede iphlpapi i cmake konfig, men ser ud til den også virker uden. Den skulle bare lige overveje det:
+target_link_libraries(quality_api PRIVATE ws2_32 iphlpapi)
