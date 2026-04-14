@@ -69,6 +69,17 @@ int main()
         std::vector<int> values = parseCsvInts(req.get_param_value("values"));
         res.set_content(std::string("{\"result\":\"") + service.evaluateSensorHealth(values) + "\"}", "application/json"); });
 
-    std::cout << "Server listening on http://127.0.0.1:8080";
-    svr.listen("127.0.0.1", 8080);
+    // std::cout << "Server listening on http://127.0.0.1:8080";
+    // svr.listen("127.0.0.1", 8080);
+
+    std::cout << "Server attempting to start on http://127.0.0.1:8080..." << std::endl;
+
+    if (!svr.listen("127.0.0.1", 8080))
+    {
+        std::cerr << "Error: Server failed to start! Maybe the port is busy?" << std::endl;
+        // Keep the window open so you can read the error
+        std::cout << "Press Enter to exit...";
+        std::cin.get();
+        return 1;
+    }
 }

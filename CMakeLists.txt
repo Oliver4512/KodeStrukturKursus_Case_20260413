@@ -20,7 +20,7 @@ add_executable(quality_api src/main.cpp)
 target_link_libraries(quality_api PRIVATE quality_core)
 if (WIN32)
   target_compile_definitions(quality_api PRIVATE _WIN32_WINNT=0x0A00)
-  target_link_libraries(quality_api PRIVATE ws2_32)
+  target_link_libraries(quality_api PRIVATE ws2_32 iphlpapi)
 endif()
 
 enable_testing()
